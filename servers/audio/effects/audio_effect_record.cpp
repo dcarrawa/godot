@@ -218,7 +218,9 @@ Ref<AudioStreamSample> AudioEffectRecord::get_recording() const {
 	PoolVector<uint8_t> dst_data;
 
 	ERR_FAIL_COND_V(current_instance.is_null(), NULL);
-	ERR_FAIL_COND_V(current_instance->recording_data.size() == 0, NULL);
+	if (current_instance->recording_data.size() == 0) {
+		return NULL;
+	}
 
 	if (dst_format == AudioStreamSample::FORMAT_8_BITS) {
 		int data_size = current_instance->recording_data.size();
