@@ -150,11 +150,11 @@ void gd_mono_debug_init() {
 
 	// Temporary to fix -- ERROR: GDMonoLog::mono_log_callback: Mono: FATAL ERROR '* Assertion at ..\mono\mini\debugger-agent.c:4093, condition `!tls' not met (in domain, error)', ABORTING! Logfile: ' C :\Users\devin\AppData\Roaming / Godot / mono / mono_logs / 2020_10_07 22.58.17(18988).txt'.
 	// Need to figure out why this happens so we can debug C#
-	//if (da_args.length() == 0) {
-	//	da_args = String("--debugger-agent=transport=dt_socket,address=127.0.0.1:" + itos(da_port) +
-	//					 ",embedding=1,server=y,suspend=" + (da_suspend ? "y,timeout=" + itos(da_timeout) : "n"))
-	//					  .utf8();
-	//}
+	if (da_args.length() == 0) {
+		da_args = String("--debugger-agent=transport=dt_socket,address=127.0.0.1:" + itos(da_port) +
+						 ",embedding=1,server=y,suspend=" + (da_suspend ? "y,timeout=" + itos(da_timeout) : "n"))
+						  .utf8();
+	}
 #else
 	if (da_args.length() == 0)
 		return; // Exported games don't use the project settings to setup the debugger agent
