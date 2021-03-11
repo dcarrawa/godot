@@ -42,6 +42,8 @@
             android:name="xr_mode_metadata_name"
             android:value="xr_mode_metadata_value" />
 
+        <meta-data android:name="com.oculus.supportedDevices" android:value="quest|quest2"/>
+
         <activity
             android:name=".GodotApp"
             android:label="@string/godot_project_name_string"
