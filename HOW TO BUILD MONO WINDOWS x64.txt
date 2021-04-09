@@ -1,5 +1,5 @@
-scons p=windows tools=yes module_mono_enabled=yes mono_glue=no mono_static=true copy_mono_root=true mono_prefix="C:\Program Files\patched_mono_for_godot_windows_x64" -j16 --clean
-scons p=windows target=release_debug tools=yes module_mono_enabled=yes mono_static=true copy_mono_root=true mono_prefix="C:\Program Files\patched_mono_for_godot_windows_x64" -j16 --clean
-scons p=windows tools=yes module_mono_enabled=yes mono_glue=no mono_static=true copy_mono_root=true mono_prefix="C:\Program Files\patched_mono_for_godot_windows_x64" -j16
+scons p=windows tools=yes module_mono_enabled=yes mono_glue=no mono_static=true copy_mono_root=true mono_prefix="C:\Users\devin\Documents\GitHub\MonoForGodot" -j16 --clean
+scons p=windows target=release_debug tools=yes module_mono_enabled=yes mono_static=true copy_mono_root=true mono_prefix="C:\Users\devin\Documents\GitHub\MonoForGodot" -j16 --clean
+scons p=windows tools=yes module_mono_enabled=yes mono_glue=no mono_static=true copy_mono_root=true mono_prefix="C:\Users\devin\Documents\GitHub\MonoForGodot" -j16
 bin\godot.windows.tools.64.mono --generate-mono-glue modules/mono/glue
-scons p=windows target=release_debug tools=yes module_mono_enabled=yes mono_static=true copy_mono_root=true mono_prefix="C:\Program Files\patched_mono_for_godot_windows_x64" -j16
+scons p=windows target=release_debug tools=yes module_mono_enabled=yes mono_static=true copy_mono_root=true mono_prefix="C:\Users\devin\Documents\GitHub\MonoForGodot" -j16
