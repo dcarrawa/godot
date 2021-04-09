@@ -703,7 +703,12 @@ void AudioDriverWASAPI::thread_func(void *p_udata) {
 						if (flags & AUDCLNT_BUFFERFLAGS_SILENT) {
 							l = r = 0;
 						} else {
-							if (ad->audio_input.channels == 2) {
+							if (ad->audio_input.channels == 4) {
+								// TODO : What do we want to do about the other 2 channels?
+								l = read_sample(ad->audio_input.format_tag, ad->audio_input.bits_per_sample, data, j * 4);
+								r = read_sample(ad->audio_input.format_tag, ad->audio_input.bits_per_sample, data, j * 4 + 1);
+							}
+							else if (ad->audio_input.channels == 2) {
 								l = read_sample(ad->audio_input.format_tag, ad->audio_input.bits_per_sample, data, j * 2);
 								r = read_sample(ad->audio_input.format_tag, ad->audio_input.bits_per_sample, data, j * 2 + 1);
 							} else if (ad->audio_input.channels == 1) {
